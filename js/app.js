@@ -68,7 +68,7 @@ searchField.addEventListener('keyup', async (event) => {
               <h2 class="card-title">${strMeal}</h2>
               <p>${strInstructions.slice(0, 20)}</p>
               <div class="card-actions justify-end">
-                <button class="btn btn-primary">Add to Cart</button>
+                <button onclick="addToCart(this)" class="btn btn-primary">Add to Cart</button>
               </div>
             </div>
         </div>
@@ -107,7 +107,7 @@ const loadMealsByCategory = async (category) => {
           <h2 class="card-title">${strMeal}</h2>
           <p>If a dog chews shoes whose shoes does he choose?</p>
           <div class="card-actions justify-end">
-            <button class="btn btn-primary">Buy Now</button>
+            <button onclick="addToCart(this)"class="btn btn-primary">Add to Cart</button>
           </div>
         </div>
       </div>
