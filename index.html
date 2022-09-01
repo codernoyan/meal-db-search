@@ -29,10 +29,13 @@
 <body>
   <header class="container mx-auto my-4">
     <div class="flex justify-between items-center">
-      <h1 class="text-center my-2 text-2xl font-semibold">The Meal DB</h1>      
+      
+      <h1 class="text-center my-2 text-2xl font-semibold">The <span class="font-bold text-orange-600">Meal</span> DB</h1>
+      <h4 class="text-xl font-semibold"><span id="meals-total" class="font-bold text-orange-600">0</span> Meals Found</h4>
       <div>
-        <h3>Cart Total: <span class="indicator-item badge badge-secondary">0</span></h3>
+        <h3 class="text-xl font-semibold">Cart Total: <span class="font-bold text-orange-600">0</span></h3>
       </div>
+
     </div>
     <div class="w-full">
       <input id="search-field" type="text" placeholder="Search Product Name Here by Press Enter" class="input input-bordered input-error w-full" />

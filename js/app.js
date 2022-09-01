@@ -33,6 +33,7 @@ const searchField = document.getElementById('search-field');
 searchField.addEventListener('keyup', async (event) => {
     const targetKey = event.key;
     if (targetKey === 'Enter') {
+        toggleSpinner(true);
         const searchValue = searchField.value;
         const meals = await loadMeals('');
         console.log(meals);
@@ -40,7 +41,11 @@ searchField.addEventListener('keyup', async (event) => {
         // search value
         const foundMeals = meals.filter(meal => meal.strMeal.toLowerCase().includes(searchValue.toLowerCase()));
         console.log(foundMeals);
-        
+
+        // total meals found
+        const totalMeals = document.getElementById('meals-total');
+        totalMeals.innerText = foundMeals.length;
+
         // validation
         const alertMessage = document.getElementById('alert');
         if (foundMeals.length === 0) {
@@ -71,6 +76,7 @@ searchField.addEventListener('keyup', async (event) => {
             mealContainer.appendChild(mealDiv);
             searchField.value = ``;
         })
+        toggleSpinner(false);
     }
 })
 
@@ -83,6 +89,9 @@ const loadMealsByCategory = async (category) => {
 
     const allMeals = data.meals;
     // console.log(allMeals.length)
+    // total meals found
+    const totalMeals = document.getElementById('meals-total');
+    totalMeals.innerText = allMeals.length;
     // show the meals
     const mealContainer = document.getElementById('meals');
     mealContainer.innerHTML = ``;
